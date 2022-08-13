@@ -1,0 +1,64 @@
+#+TITLE: Clase 2022-08-12
+
+* Convenciones de nombres
+Conjunto de normas para un lenguaje de programación específico que recomiendan estilos de programación, buenas prácticas y métodos para mantener el aspecto del código fuente.
+
+** Camel Case
+En nombre se debe a que las mayúsculas a lo largo de una palabra en CamelCase se asemejan a las jorobas de un camello. La primera letra es mayúscula y la primera letra de las consiguientes palabras son mayúsculas.
+
+Ej. holaMundo
+
+** Upper Camel Case
+Similar al camel case, con la diferencia de que la primera letra es mayúsculas.
+
+EJ. HolaMundo.
+
+** Snake case
+
+hola_mundo
+
+** Subnota 1
+
+Es mejor programar código en inglés (nombres de variables, funciones etc).
+
+El conocimiento debe de ser libre. Siempre tienes que enseñar a los demás, sobre todo a tus subordinados. Cuando estás empezando, crees saberlo todo, cuando eres experto, crees que no sabes mucho (Efecto Dunning-Krugger).
+
+Siempre ser humilde con tu trabajo. No dejes que tu orgullo te evite de probar tu código. Admite tus errores.
+
+La vida del programador es ~60% leer código. ~35% administración (coordinación con compañeros). ~10% Educación continua. ~5% enseñar a compañeros. Lo poco que queda es programar.
+
+* Java
+
+** Hola Mundo en java
+
+#+BEGIN_SRC java
+//Main.Java
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello world");
+  }
+}
+#+END_SRC
+
+Las clases se escriben con UpperCamelCase.
+
+Los archivos tienen que llamarse igual que la clase principal.
+
+La función principal se llama main.
+
+Para correr:
+#+BEGIN_SRC bash
+  cd dirección/a/el/archivo
+  javac Main.java
+  java Main
+#+END_SRC
+
+** Subnota 2
+
+Para absorber conocimiento hay que unirse a comunidades sobre el tema.
+
+Existen las soft skills y las hard skills. Las hard skills son las abilidades técnicas. Las soft skills son las habilidades interpersonales e intrapersonales como networking, locución, habilidades emocionales, etc.
+
+Skill importante de aprender: saber leer errores. Se aprende a la mala.
+
+Recomendación: ver la serie Silicon Valley.
