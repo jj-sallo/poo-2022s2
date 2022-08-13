@@ -4,19 +4,26 @@
 Conjunto de normas para un lenguaje de programación específico que recomiendan estilos de programación, buenas prácticas y métodos para mantener el aspecto del código fuente.
 
 ** Camel Case
-En nombre se debe a que las mayúsculas a lo largo de una palabra en CamelCase se asemejan a las jorobas de un camello. La primera letra es mayúscula y la primera letra de las consiguientes palabras son mayúsculas.
+El nombre se debe a que las mayúsculas a lo largo de una palabra en CamelCase se asemejan a las jorobas de un camello. La primera letra es mayúscula y la primera letra de las consiguientes palabras son mayúsculas.
 
-Ej. holaMundo
-
+Ej.
+#+BEGIN_SRC
+holaMundo
+#+END_SRC
 ** Upper Camel Case
 Similar al camel case, con la diferencia de que la primera letra es mayúsculas.
 
-EJ. HolaMundo.
-
+Ej.
+#+BEGIN_SRC
+HolaMundo
+#+END_SRC
 ** Snake case
+Esta conveción usa minúsculas y separa palabras con un guión bajo.
 
+Ej.
+#+BEGIN_SRC
 hola_mundo
-
+#+END_SRC
 ** Subnota 1
 
 Es mejor programar código en inglés (nombres de variables, funciones etc).
