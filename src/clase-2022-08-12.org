@@ -1,3 +1,4 @@
+
 #+TITLE: Clase 2022-08-12
 
 * Convenciones de nombres
@@ -36,10 +37,41 @@ La vida del programador es ~60% leer código. ~35% administración (coordinació
 
 * Java
 
+** Instalar Java
+
+Cuando se habla de instalar Java, se puede referir a instalar la versión de Java para usuarios finales, la cual consiste en el Java Runtime Environment (JRE), o se puede referir a el Java Development Kit (JDK), el cual consiste en el JRE junto con herramientas para desarrollar en Java, tales como el compilador, el debugger, la API de Java, y la Librería de Clases de Java (JCL).
+
+Al momento de instalar java, es pertinente verificar que versión se ha descargado. Cada nueva versión contiene funciones nuevas y correciones de errores que pueden crear incompatibilidades entre versiones. Además, versiones viejas pueden dejar de recibir soporte, dejando el código vulnerable y creando posibles brechas de seguridad.
+
+Algunas versiones tienen soporte extendido, conocidas como versiones LTS (Long Term Service). Estas versiones tienen soporte de 8 años por Oracle, durante las cuales reciben actualizaciones de seguridad, estabilidad y rendimiento, pero no de funcionalidad. Este soporte extendido, sin embargo, tiene un costo para todos los usuarios comerciales.
+
+*** Versiones destacables de Java
+
+| Versión | Lanzamiento     | Fin del Soporte | Notas                         |
+|---------+-----------------+-----------------+-------------------------------|
+| Java 7  | Julio 2011      | Julio 2019      | Version sin soporte.          |
+|---------+-----------------+-----------------+-------------------------------|
+| Java 8  | Marzo 2014      | Diciembre 2030  | La versión más común          |
+|         |                 |                 | Instalada predeterminadamente |
+|         |                 |                 | en múltiples sistemas         |
+|         |                 |                 | operativos.                   |
+|---------+-----------------+-----------------+-------------------------------|
+| Java 11 | Septiembre 2018 | Septiembre 2026 | LTS                           |
+|---------+-----------------+-----------------+-------------------------------|
+| Java 17 | Septiembre 2021 | Septiembre 2029 | LTS                           |
+|---------+-----------------+-----------------+-------------------------------|
+| Java 18 | Marzo 2022      | Septiembre 2022 | Versión más reciente.         |
+
+*** Oracle JDK vs OpenJDK
+
+Existen dos versiones del JDK, una la cual es ofrecida comercialmente por Oracle, llamada el Oracle JDK, y otra, la cual es mantenida por Oracle en conjunto con la comunidad del Código Abierto, así como por compañías como Google e IBM, llamada el OpenJDK. Este está licenciado de manera permisiva, lo que permite su uso comercial y en programas de código abierto y código libre sin costo alguno. Oracle no ofrece oficialmente versiones LTS, pero algunas compañías como Microsoft, Red Hat y JetBrains ofrecen su propia version del OpenJDK con soporte LTS.
+
+Para usos prácticos, no existe diferencia entre el Oracle JDK y el OpenJDK, sin embargo, Oracle no ofrece soporte empresarial y extendido a usuarios del OpenJDK. Por otra parte, Oracle no puede demandarte por usar el OpenJDK comercialmente sin suscripción, como hace con el Oracle JDK. Para este curso se pueden usar cualquiera de los dos.
+
 ** Hola Mundo en java
 
 #+BEGIN_SRC java
-//Main.Java
+//Main.java
 public class Main {
   public static void main(String[] args) {
     System.out.println("Hello world");
@@ -53,12 +85,33 @@ Los archivos tienen que llamarse igual que la clase principal.
 
 La función principal se llama main.
 
-Para correr:
-#+BEGIN_SRC bash
-  cd dirección/a/el/archivo
-  javac Main.java
-  java Main
-#+END_SRC
+
+*** Para correr:
+
+1. Verifica que Java este instalado correctamente:
+
+   Para verificar que Java este instalado es necesario abrir una consola, cmd o PowerShell. En Windows, esta se puede abrir siguiendo [[https://es.wikihow.com/abrir-la-l%C3%ADnea-de-comandos-en-Windows][esta guía]]. Una vez dentro, se debe correr el siguiente comando:
+   
+   Java menor a 1.9
+   #+BEGIN_SRC bash
+     java -version
+   #+END_SRC
+
+   Java 1.9 en adelante
+   #+BEGIN_SRC bash
+     java --version
+   #+END_SRC
+
+2. Crea el archivo Main.java y copia el código que se encuentra arriba.
+
+3. Dentro de la consola o cmd, se deben correr los siguientes comandos.
+   #+BEGIN_SRC bash
+     cd dirección/a/el/archivo
+     javac Main.java
+     java Main
+   #+END_SRC
+
+Si la consola imprime el texto "Hello world", el programa se ha compilado y ejecutado exitosamente.
 
 ** Subnota 2
 
