@@ -1,0 +1,87 @@
+#+LANG es
+#+TITLE: Clase del 15 de Agosto del 2022
+
+* Java
+** Variables y constantes
+
+Las variables y constantes corresponoded a ciertas ubicaciones en la memoria de la computadora. Toda variable y constante tiene un nombre, tipo, un tamaño (en bytes) y un valor.
+
+#+BEGIN_SRC java
+  int numberOfCards = 30;
+#+END_SRC
+
+Podemos declarar variables en cualquier parte del código indicando el tipo de dato y el nombre de la variable. Por ejemplo:
+
+#+BEGIN_SRC java
+  float grade;
+#+END_SRC
+
+Nombres de datos validos: date, dateinit, date_end.
+Nombres de variables no validos: date-init, fecha+end, 3date.
+
+Nota: Utilizaremos la convención camel case y el idioma inglés para la nomenclatura de las variables. Las variables tienen que ser muy descriptivos sin ser largos para aumentar legibilidad (2 o 3 palabras a lo mucho).
+
+** Tipos de datos
+
+Aunque java es un lenguaje orientado a objetos, existen varios tipos de datos primitivos que conviven con las clases.
+
+Los primitivos empiezan con minúscula (camelCase) y las clases comienzan con mayúscula (UpperCamelCase).
+
+Existen los siguientes tipos de datos primitivos, cada uno con su longitud en bytes.
+
+| Tipos Enteros | Bytes |
+|---------------+-------|
+| byte          |     1 |
+| char          |     2 |
+| short         |     2 |
+| int           |     4 |
+| long          |     8 |
+
+| Tipos Flotantes | Bytes |
+|-----------------+-------|
+| float           |     4 |
+| double          |     8 |
+
+| Tipos lógicos | Bytes |
+|---------------+-------|
+| boolean       |     1 |
+
+| Tipo  | Descripción                               |
+|-------+-------------------------------------------|
+| byte  | Almacena números enteros entre -128 a 127 |
+| short | Almacena números enteros de -32,768 a 767 |
+| int   | Almacena números                          |
+
+#+BEGIN_SRC java
+  byte numberByte = 1;
+  float numberFloat = 10.5f;
+  double numberDouble = 10.5;
+  boolean dataBoolean = true;
+  char dataCharLetter = 'R';
+  char dataCharNumberOfAscii = 82;
+#+END_SRC
+
+Además existe la clase String que no es un tipo de dato primitivo.
+
+String message = "Hola Mundo";
+
+** Wrappers
+
+Para cada uno de los tipos primitivos existe una clase que lo representa y permite realizar diferentes operaciones relacionadas con el tipo de dato en cuestión. A estas clases se les llama _Wrappers_.
+
+| Tipo primitivo | Wrapper   |
+|----------------+-----------|
+| bye            | Byte      |
+| char           | Character |
+| short          | Short     |
+| int            | Integer   |
+| long           | Long      |
+
+#+BEGIN_SRC java
+  int identifier = 1234;
+  String identifierString = Integer.toString(identifier);
+#+END_SRC
+
+** Investigar
+
+Condicionales, type casting, wrapper. Verificar que métodos incluyen los wrappers. Esto se puede hacer insertando un punto después de un wrapper en VSCodes.

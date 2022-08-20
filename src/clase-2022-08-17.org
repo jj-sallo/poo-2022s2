@@ -1,0 +1,129 @@
+#+LANG es
+#+TITLE: Clase
+
+* Autoboxing
+La conversión entre tipo de dato primitivo y su correspondiente wrapper es automática. Esta característica se le denomina autoboxing.
+
+#+BEGIN_SRC java
+  Integer value = new Integer(value: 1234);
+  int valuePrimitive = value;
+#+END_SRC
+
+El constructor de integer esta obsoleto a partir de la versión 9 de Java y podemos inicializar escribiendo el valor literal.
+
+#+BEGIN_SRC java
+  Integer value = new Integer(value: 1234); // Deprecado
+  Integer value2 = 1234;                    // Actual
+#+END_SRC
+
+En reglas generales, para declarar variables utilizaremos los tipos primitivos y utilizaremos los wrappers para utilizar operaciones vinculados a estos, sin embargo los wrappers al ser objetos, pueden contener el valor /null/, lo cual nos podría servir de utilidad.
+
+#+BEGIN_SRC java
+  Integer optionalValue = null;
+  if (optionalValue != null) {
+      System.out.println(optionalValue);
+  } else {
+      System.out.println("El objeto se encuentra nulo");
+  }
+#+END_SRC
+
+** Diferencia entre null y 0
+Semánticamente, null y 0 significan cosas diferentes.
+
+* Constantes
+Para declarar un valor constante utilizaremos el modificador final
+
+#+BEGIN_SRC java
+  final double pi = 3.1416;
+  pi = 3.141612; // error: no se puede sobreescribir constante
+#+END_SRC
+
+Es posible inicializar una variable después de su declaración, pero no se considera buena práctica
+#+BEGIN_SRC java
+  final int value = 10; // Correcto y recomendado
+  final int value2;
+  value2 = 20; // correcto, pero no recomendado
+#+END_SRC 
+
+Generalmente se suele ver a las constantes acompañadas con public y static de manera global en las clases.
+
+* Literales expresados en otro sistema numérico
+Anteponemos el prefijo 0b un valor literal numérico entero mediante su representación en sistema binario. Opcionalmente ponemos el carácter _ para apoyarnos a separar el número.
+
+#+BEGIN_SRC java
+  int binary = 0b00000202_00111001_01111111_10110001;
+#+END_SRC
+
+Para hexadecimal se usa el prefijo 0x.
+
+* Carácteres especiales
+Los caractéres especiales podemos utilizarlos dentro de una cadena anteponiéndoles el caractér de escape.
+
++----------+------------------------------+
+| Caractér | Descripción                  |
++----------+------------------------------+
+| \n       | Salto de linea               |
++----------+------------------------------+
+| \b       | Retorno de carro             |
++----------+------------------------------+
+| \t       | tabulador                    |
++----------+------------------------------+
+| \"       | comilla doble                |
++----------+------------------------------+
+| \\       | diagonal inversa             |
++----------+------------------------------+
+| \udddd   | cualquier carácter expresado |
+|          | mediante su código unicode   |
++----------+------------------------------+
+
+* Type Casting
+El type casting es la conversión de un tiṕpo de dato a otro. En java existen dos tipos de Type Casting.
+
+** Type Casting automático
+El type casting automático se da cuando se quiere convertir de un tipo de dato más pequeño a uno más grande.
+
+byte->short->char->int->long->float->double.
+
+#+BEGIN_SRC java
+  int value = 15;
+  double valueDecimal = value;
+#+END_SRC
+
+** Type Casting manual
+En el type casting Manual debe de colocarse el tipo de entre paréntesis antes del valor.
+
+#+BEGIN_SRC java
+  double valueDecimal = 15.0;
+  int value = (int) valueDecimal;
+#+END_SRC
+
+* Operadores
+Los operadores se utilizan para realizar operaciones con variables y constantes.
+
+Existen grupos de operadores para poder identificarlos de mejor manera, son los siguientes:
+- Operadores aritméticos
+- Operadores de asignación
+- Operadores de comparación
+- Operadores lógicos
+
+** Operadores Aritméticos
+Se utilizan para realizar operaciones matemáticas comunes.
+
++----------+----------------+---------+
+| Operador | Nombre         | Ejemplo |
++----------+----------------+---------+
+| +        | Suma           | x + y   |
++----------+----------------+---------+
+| -        | Resta          | x - y   |
++----------+----------------+---------+
+| *        | Multiplicación | x * y   |
++----------+----------------+---------+
+| /        | División       | x/y     |
++----------+----------------+---------+
+| %        | Módulo         | x%y     |
++----------+----------------+---------+
+| ++       | Incremento     | ++x     |
++----------+----------------+---------+
+| --       | Decremento     | --x     |
++----------+----------------+---------+
+

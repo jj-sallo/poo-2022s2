@@ -1,0 +1,31 @@
+#+LANG es
+#+TITLE: Clase Viernes 19 de Agosto del 2022
+
+* Java
+** Otros operadores
+
+| Operador | Descripción |
+|----------+-------------|
+| =        |             |
+| +=       |             |
+| -=       |             |
+| *=       |             |
+| /=       |             |
+| %=       |             |
+| &=       |             |
+| ==       |             |
+| !=       |             |
+| ^=       |             |
+| >>=      |             |
+| <<=      |             
+
+** Operadores lógicos
+
+| Operador | Descripción |
+|----------+-------------|
+| &&       | And         |
+| ||       | Or          |
+| !        | Not         |
+
+** Estructuras de control
+Emiten al programador especificar si qla siguiente intruccipon a ejecutarse tal vez no sea la siguiente en la secuencia.
