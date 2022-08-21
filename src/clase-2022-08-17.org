@@ -1,5 +1,5 @@
-#+LANG es
-#+TITLE: Clase
+#+LANGUAGE: es
+#+TITLE: Clase del miércoles 17 de Agosto del 2022
 
 * Autoboxing
 La conversión entre tipo de dato primitivo y su correspondiente wrapper es automática. Esta característica se le denomina autoboxing.

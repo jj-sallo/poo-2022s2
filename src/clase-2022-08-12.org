@@ -1,5 +1,5 @@
-
-#+TITLE: Clase 2022-08-12
+#+LANGUAGE: es
+#+TITLE: Clase del viernes 12 de Agosto del 2022
 
 * Convenciones de nombres
 Conjunto de normas para un lenguaje de programación específico que recomiendan estilos de programación, buenas prácticas y métodos para mantener el aspecto del código fuente.

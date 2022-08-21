@@ -1,5 +1,5 @@
-#+LANG es
-#+TITLE: Clase Viernes 19 de Agosto del 2022
+#+LANGUAGE: es
+#+TITLE: Clase del viernes 19 de Agosto del 2022
 
 * Java
 ** Otros operadores

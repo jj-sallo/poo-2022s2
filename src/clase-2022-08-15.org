@@ -1,5 +1,5 @@
-#+LANG es
-#+TITLE: Clase del 15 de Agosto del 2022
+#+LANGUAGE: es
+#+TITLE: Clase del lunes 15 de Agosto del 2022
 
 * Java
 ** Variables y constantes
