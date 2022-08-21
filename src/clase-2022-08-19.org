@@ -4,28 +4,34 @@
 * Java
 ** Otros operadores
 
-| Operador | Descripción |
-|----------+-------------|
-| =        |             |
-| +=       |             |
-| -=       |             |
-| *=       |             |
-| /=       |             |
-| %=       |             |
-| &=       |             |
-| ==       |             |
-| !=       |             |
-| ^=       |             |
-| >>=      |             |
-| <<=      |             
+| Operador    | Descripción                           |
+|-------------+---------------------------------------|
+| =           | Asignación                            |
+| +=          | Suma y asignación                     |
+| -=          | Resta y asignación                    |
+| *=          | Multiplicación y asignación           |
+| /=          | División y asignación                 |
+| %=          | Módulo y asignación                   |
+| ==          | Igual que                             |
+| !=          | Diferente que                         |
+| \vert       | OR bitwise                            |
+| ^           | XOR  bitwise                          |
+| &           | AND bitwise                           |
+| >>          | Desplazamiento derecha                |
+| <<          | Desplazamiento izquierda              |
+| \vert{}def= | OR bitwise y asignación               |
+| &=          | AND bitwise y asignación              |
+| ^=          | XOR bitwise y asignación              |
+| >>=         | Desplazamiento derecha y asignación   |
+| <<=         | Desplazamiento izquierda y asignación |
 
 ** Operadores lógicos
 
-| Operador | Descripción |
-|----------+-------------|
-| &&       | And         |
-| ||       | Or          |
-| !        | Not         |
+| Operador             | Descripción |
+|----------------------+-------------|
+| &&                   | And         |
+| \vert{}def\vert{}def | Or          |
+| !                    | Not         |
 
 ** Estructuras de control
 Emiten al programador especificar si qla siguiente intruccipon a ejecutarse tal vez no sea la siguiente en la secuencia.
