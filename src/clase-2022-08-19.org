@@ -19,7 +19,7 @@
 | &           | AND bitwise                           |
 | >>          | Desplazamiento derecha                |
 | <<          | Desplazamiento izquierda              |
-| \vert{}def= | OR bitwise y asignación               |
+| \vert{}=    | OR bitwise y asignación               |
 | &=          | AND bitwise y asignación              |
 | ^=          | XOR bitwise y asignación              |
 | >>=         | Desplazamiento derecha y asignación   |
@@ -30,7 +30,7 @@
 | Operador             | Descripción |
 |----------------------+-------------|
 | &&                   | And         |
-| \vert{}def\vert{}def | Or          |
+| \vert{}\vert{}       | Or          |
 | !                    | Not         |
 
 ** Estructuras de control
