@@ -1,0 +1,50 @@
+#+LANGUAGE: en
+#+TITLE: Clase del 24 de Agostro del 2022
+
+* Java
+** Strings
+*** Sub cadenas
+El método substring recibe las posiciones desde (inclusive) y hasta (no inclusive) entre las cuales se ubica la subcadena que queremos obtener. Si le pasamos un único parámetro substring retornará la subcadena comprendida entre esta posición y el final de la cadena de carácteres.
+
+#+begin_src java
+  String hello = "Hello World";
+  System.out.println(hello.substring(0,4)); // Hell
+  System.out.println(hello.substring(6,11)); // World
+  System.out.println(hello.substring(3,4)); // lo World
+#+end_src
+
+*** Concatenación
+Podemos usar el operador + para concatenar cadenas de caractéres.
+
+#+begin_src java
+  String hello = "Hello ";
+  String world = "World";
+  String helloWorld = hello + world; // Hello World
+#+end_src
+
+** Integer
+La clase integer (wrapper de int) nos permite obtener un int a partir de una cadena de caracteres con formato numérico; y viceversa. Análogamente, la clase oOuble (wrapper de double) hace lo propio entre cadenas y números con decimales.
+
+** Java Math
+La clase Java Math tiene muchos métodos que le permiten realizar tareas matemáticas con números. Algunos de ellos son:
+
+*** Math.max()
+El método Math.max(x, y) se puede usar para encontrar el valor más alto entre dos valores.
+
+#+begin_src java
+  Math.max(5, 10); // 10
+#+end_src
+
+*** Math.min()
+El método Math.max(x, y) se puede usar para encontrar el valor más bajo entre dos valores.
+
+#+begin_src java
+  Math.min(5, 10); // 5
+#+end_src
+
+*** Math.sqrt()
+Nos ayuda a obtener la raiz cuadrada de un número
+
+#+begin_src java
+  Math.sqrt(64); // 64
+#+end_src

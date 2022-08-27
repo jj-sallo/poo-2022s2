@@ -1,0 +1,101 @@
+#+LANGUAGE: es
+#+TITLE: Clase del lunes 22 de Agosto del 2022
+
+* Java
+** Condicionales
+*** If
+
+#+BEGIN_SRC java
+  if (x == 4) {
+      // código...
+  } else if (x == 3) {
+      // código...
+  } else {
+      // código...
+  }
+#+END_SRC
+
+*** Switch
+
+#+BEGIN_SRC java
+  int value = 10;
+  switch (value) {
+      case 10:
+          // código...
+          break;
+      case 11:
+          // código...
+      default:
+          // código...
+          break;
+  }
+#+END_SRC
+
+*** If ternanrio
+
+#+BEGIN_SRC java
+  boolean isActive = false;
+  String message = isActive ? "Usuario Activado" : "Usuario Desactivado";
+#+END_SRC
+** Ciclos
+*** for
+
+#+BEGIN_SRC java
+  for (int i = 0; i < 0; i++) {
+      // código
+  }
+#+END_SRC
+
+*** while
+
+#+BEGIN_SRC java
+  while (x == 5) {
+      // código...
+  }
+#+END_SRC
+
+*** Do while
+
+#+BEGIN_SRC java
+  do {
+      // código...
+  } while (condición);
+#+END_SRC
+
+** Cadenas de Caracteres
+Como ya dijimos, String no es un un tipo de dato primitivo; es una clase. Por esto muchas de las funciones para el tratamiento de cadenas de caracteres ya están contenidas dentro de las mismas cadenas. Esto significa que un objeto string es capaz de determinar si contiene un determinado caractér, convertir sus caracteres a mayúsculas, obtener una subcadena e indicar si concuerda o no con una determinada expresión regular (regex).
+
+Llamamos "longitud de cadena" a la cantida de caracteres que la componen.
+
+#+BEGIN_SRC java
+  String hello = "hello";
+  int lenghtHello = hello.length();
+#+END_SRC
+
+#+BEGIN_SRC java
+  String hello = "";
+  boolean isEmptyHello = hello.isEmpty(); // retorna true
+#+END_SRC
+
+Los caracteres de una cadena se numeran según la posición que ocupan, comenzando desde cero. Luego el método charAt retorna el caractér que se encuentra en una determinada posición.
+
+#+BEGIN_SRC java
+  for (int i = 0; i < hello.length(); i++) {
+      char c = hello.charAt[i];
+      System.out.println(c);
+  }
+#+END_SRC
+
+Para comparar correctamente dos cadenas de caracteres se utiliza el método equals.
+
+#+BEGIN_SRC java
+  String hello = "hello";
+  String hello2 = "Hola mundo";
+  boolean isEquals = hello.equals(hello2); // retorna false
+#+END_SRC
+
+El método indexOf retorna la posición de la primera ocurrencia de un determinado caractér, dentro de la cadena de caracteres. Análogamente, el método lastIndexOf retorna la posición de las última ocurrencia del caractér indicado.
+
+Los métodos indexOf y lastIndexOf también puedes utilizarse para determinar en que posición comienza la primera o la última ocurrencia de una determinada subcadena dentro de la cadena de caracteres.
+
+Los métodos toUpperCase y toLowerCase retornan respectivamente una copia de la cadena de caracteres en mayúsculas o en minúsculas.
