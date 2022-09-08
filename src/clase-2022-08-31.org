@@ -1,0 +1,69 @@
+#+LANGUAGE: en
+#+TITLE: Clase del Miercoles 31 de Agosto del 2022
+
+* Java
+** Arreglos
+Un arreglo es un grupo de variables (llamadas elementos o componentes) que contienen valores del mismo tipo.
+
+Las matrices se utilizan para almacenar varios valores en una sola variable, en lugar de declarar variabes separadas para cada valor.
+
+Para declarar una matriz, defina el tipo de variable entre corchetes:
+
+#+begin_src java
+  String[] cars;
+#+end_src
+
+Para insertar valores en él, podemos usar un literal de matriz, coloque los valores en una lista separada por comas, dentro de llaves:
+
+#+begin_src  java
+  String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+#+end_src
+
+UN programa puede hacer referencia a cualquiera de etso elementos mediante una expresion de acceso a un arreglo que contiene el nombre del arreglo, seguido por el índice del elemento específico encerrado entre corchetes([]).
+
+#+begin_src java
+  String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+  System.out.println(cars[0]);
+#+end_src
+
+Para saber cuántos elementos tiene una matriz, se utiliza la propiedad /length/.
+
+#+begin_src java
+  String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+  System.out.println(cars.length);
+#+end_src
+
+Podemos utilizar el ciclo para recorrer un arreglo
+
+#+begin_src java
+  for (int i = 0; i < cars.length; i++) {
+      System.out.println(cars[i]);
+  }
+#+end_src
+
+También existe el ciclo /for-each/, dicho ciclo es por execelcia para recorrer arreglos ya que es mucho más fácil de escribir
+
+#+begin_src java
+  for (String car : cars) {
+      System.out.println(car);
+  }
+#+end_src
+
+Una matriz multidimensional es una matriz de matrices.
+
+#+begin_src java
+  int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7, 8} };
+  int value = myNUmbers[1][2];
+  System.out.println(value);
+#+end_src
+
+Se utilizan los ciclos anidados para recorrer las matrices multidimensionales
+
+#+begin_src java
+  int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7, 8} };
+  for (int i = 0; i < myNumbers.length; ++i) {
+      for (int j = 0; j < myNumbers[i].length; ++j) {
+          System.out.println(myNumbers[i][j]);
+      }
+  }
+#+end_src
