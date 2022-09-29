@@ -1,0 +1,39 @@
+#+LANGUAGE: es
+#+TITLE: Clase del 14 de septiembre del 2022
+
+* Programación Orientada a Objetos
+** Objetos y clases
+_Objeto:_ Un objeto es una variable cuyo tipo de dato es una *clase*.
+_Clase:_ Una clase es una estructura que agrupa datos y funciones; a travéz de estas funciones se pueden manipular los datos de la estructura.
+
+Filter, map, reduce: las funciones que simplifican la vida y te permiten no aprender nada de POO y algorítmos. ✅
+
+Ejemplo: un automóbil.
++ Atributos
+  - Color
+  - Velocidad
+  - Ruedas
+  - Motor
++ Métodos
+  - Arranca()
+  - Frena()
+  - Vuelta()
+
+Para instanciar un objeto de una clase utilizamos la palabra reservada "new" seguido del nombre de la variable y uno de sus constructores.
+
+Para acceder a los datos y funciones de una clase utilizamos el caractér ".". Concatenándoselo al objeto creado.
+
+#+begin_src java
+  public class Fecha {
+      String day;
+      String month;
+      String year;
+  }
+  public static void main(String[] args) {
+        Fecha date = new Fecha();
+        date.day = "Lunes";
+        date.month = "Septiembre";
+        date.year = "2022";
+        System.out.println(date.day);
+  }
+#+end_src

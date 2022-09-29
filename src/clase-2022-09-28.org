@@ -1,0 +1,59 @@
+
+
+* Pilares de la POO
+La programación orientada a objetos es un paradigma que se creó para resolver los invonvenientes de la programación estructurada.
+- Código muy largo, lo cual hace que sea dificil de mantener, depurar y comprender con el tiempo.
+- Los errores generados debido a la forma secuencial en la que funciona la programación estructurada, donde si una linea dejara de funcionar, el resto del código también lo haría.
+
+Los 4 pilares de la programación orientada a objetos son:
+- Abstracción: Es cuando separamos los datos de un objeto para luego generar un molde (una clase).
+- Encapsulamiento: Lo puedes utilizar cuando deseas que ciertos métodos o propiedades sean inviolables o inalterables.
+- Herencia: Nos permite crear nuevas clases a partir de otras. Si tuvieramos una clase "Autos" y quisiéramos crear una clase "Auto deportivo" o "Auto clásico", podríamos tomar varias propiedades u métodos de la clase "Autos", Esto nos da una jerarquía de padre e hijo.
+- Polimorfismo: Proviene de poli = muchas, morfismo = formas. Se utiliza para crear métodos con el mismo nombre pero con diferentes comportamientos.
+
+** Herencia
+La herencia permite definir nuevas clases en función de otra clase ya existente.
+
+La clase derivada o subclase hereda los métodos y atributos de la clase base o super clase.
+
+Esto hace posible que, partiendo de una base, podamos redefinir el comportamiento de los métodos heredados y/o extender su funcionalidad.
+
+En la herencia se crea una nueva clase al adquirir los miembros de una existente, y se mejora con nuevas capacidades o modificando las capacidades ya existente.
+
+Con la herencia, los programadores ahorran tiempo durante el desarrollo, al basar las nuevas clases en el software existente de alta calidad, que ya ha sido probado y deprurado. Esto también aumenta la probabilidad de que un sistema se implemente y se mantenga con efectividad.
+
+Al crear una clase, en vez de declarar miembros completamente nuevos, el programador puede designar que la nueva clase herede los miembros de una clase existente, la cual se conoce como _superclase_, mientras que la clase nueva se conoce como _subclase_.
+
+Cada subclase puede convertirse en la superclase de futuras clases.
+
+[MiembrosDeLaComunidad]
+|-> [Empleado]
+  |-> [Docente]
+    |-> [Administrador]
+    |-> [Maestr]
+  |-> [Administrativo]
+|-> [Estudiante]
+|-> [Exalumno]
+
+Una subclase puede agregar sus propios campos y métodos. Por lo tanto, una subclase es más específica que su superclase y representa a un grupo más especializado de objetos. La subclase exhibe los comportamientos de su superclase y puede modificarlos, de modo que operen en forma apropiada para la subclase. Es por ello que a la herencia se le conoce algunas veces como _especialización_.
+
+La _superclase directa_ es la superclase a partir de la cual la subclase hereda de forma explícita. La superclase indirecta es cualquier clase arriba de la superclase directa en la jerarquía de clases, que define las relaciones de herencia entre las clases.
+
+#+begin_src java
+  public class Vehiculo {
+      String brand;
+      String model;
+      int numberOfWhells;
+  }
+
+  public class Autobus extends Vehiculo {
+      int numberOfPassenger;
+  }
+
+  public static void main(String[] args) {
+      Autobus bus = new Autobus();
+      bus.    // Tu IDE te mostrará todos los miembros de Vehiculo
+  }
+#+end_src
+
+Hasta los 45 minutos la gente aprende bien.

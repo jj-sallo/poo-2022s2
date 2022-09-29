@@ -1,0 +1,11 @@
+#+LANGUAGE:es
+#+TITLE: Clase del lunes 19 de septiembre del 2022
+
+* Funciones o métodos
+
+Objetivos:
+* Reutilizar códig
+
+* Métodos y variables estáticas
+
+* Variables estáticas
