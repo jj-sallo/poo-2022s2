@@ -1,0 +1,63 @@
+
+#+LANGUAGE: es
+#+TITLE: Clase del viernes 30 de septiembre del 2022
+
+* Herencia
+** Método de acceso protegido
+El uso de acceso protected ofrece un nivel intermedio de acceso entre public y provate. Los miembros protected de una superclase pueden ser utilizados por los miembros de esta superclase, por los de sus subclases y por los de otras clases en el mismo paquete.
+
+Todos los miembros public y protected de una superclase conservan su modificador de acceso original cuando se convierten en miembros de la subclase (por ejeemplo, los miembros public de la superclas se convierten en miembros public de la subclase, y los miembros proteced de la superclase sevuelven miembros protected de la subclase). Los miembros private de una superclase no pueden utilizarse fuera de la propia clase. En cambio, están ocultos en sus subclases y se pueden utilizar sólo a través de los métodos publico protected heredados de la superclase.
+
+Los métodos de una subclase pueden referirse a los miembros public y protected que se hereden de la superclase con sólo utilizar los nombres de los miembros. Cuando un método de la subclase sobrescribe al método heredado de la superclase, este último puede utilizarse desde la subclase si se antepone a su nombre la palabra clase super y un punto (.) como separador.
+
+Los métodos de una subclase no pueden tener acceso directo a los miembros private de su superclase. Una subclase puede modificar el estado de las variables de las instancias private de la superclase a través de los métodos que no son private que se propocionan por la superclase y que se heredan en la subclase.
+
+** Packages (paquetes)
+Los paquetes permiten organizar las clases en función en un determinado criterio y constituyen en un denominado espacio de nombres (namespaces) dentro del cual pueden convivir diferentes clases, incluso con elmismo nombre siemre y cuando pertenezcan diferentes paquetes.
+
+Para indicar que una determinada clase pertenece a un determinado paquete, la primer linea de código debe ser package seguido del nombre del paquete.
+
+Por ejemplo, la API de java contiene dos clases llamadas "Date", una ubicada en el paquete `java.util` y la otra en el paquete `java.sql`.
+
+Para ilustrar eso, consideramos las siguientes capetas y archivos
+
+#+begin_export ascii
+root (carpeta)
+| dates (carpeta)
+| | Fecha.java
+| Hello.java
+#+end_export
+
+Donde el archivo Fecha.java tiene:
+
+#+begin_src java Fecha.java
+  package dates;
+  public class Fecha {
+      // Funciones de la clase Fecha
+  }
+#+end_src
+
+Para usar Fecha en Hello, hacemos lo siguiente:
+
+#+begin_src java Hello.java
+  package root;
+  import dates.Fecha; // Esta linea importa la clase Fecha del paquete dates.
+  public class Hello {
+      public static void main(String[] args) {
+          Fecha date = new Fecha();
+      }
+  }
+#+end_src
+
+O alternativamente:
+
+#+begin_src java Hello.java
+  package root;
+  import dates.*; // Esta linea importa todas las clases del paquete dates.
+                  // NO HAGAS ESTO. ES MALA PRACTICA Y HACE MÁS DIFICIL DETECTAR ERRORES.
+  public class Hello {
+      public static void main(String[] args) {
+          Fecha date = new Fecha();
+      }
+  }
+#+end_src
