@@ -1,0 +1,99 @@
+* Herencia
+La herencia permite definir nuevas clases en función de otras clases ya existentes.
+
+La clase derivada o subclase hereda los métodos y atributps de la clase base o super clase. Esto hace posible que, partiendo de una base, podamos redefinir el comportamiento de los métodos heredados y/o extender su funcionalidad.
+
+Los constructores no se heredan de la superclase. Todas las clases heredan de la clase /object/, definida en la API de Java.
+
+** Constructores de subclases
+El constructor de cada subclase debe llamar en forma implícita o explícita al constructor de su superclase para inicializar las variables de instancia heredadas de la superclase. Para ello utilizamos la sintáxis de llamada al constructor de la superclase que consiste en la palabra clave super, seguida de un conjunto de paréntesis que contienen los argumentos del constructor de la superclase, que se utilizan para inicializar a las respectivas variables de instancia, si no invocará explícitamente al constructor de la superclase, el compilador trataría de insertar una llamada al constructor predeterminado o sin argumentos de la superclase.
+
+La llamada explíctira al constructor de la superclase debe ser la primera instrucción en el cuerpo del constructor. Cuando una superclase contiene un construtor sin argumentors, puede usar a super() para llamar explíctiamente a ese constructor, pero esto _rara vez se hace_.
+
+Al crear una instancia de un objeti de una subclase se inicia una cadena de llamadas a los contructores, en los que el constructor de la subclase, antes de realizar sus propias tareas, usa super para llamar a uno de los constructores de su superclase directa, o llamada implícitamente al constructor predeterminado o sin argumentos de la superclase.
+
+#+begin_src java Vehiculo.java
+  public class Vehiculo {
+      String brand;
+      String model;
+      protected int numberOfWheels;
+      public Vehiculo(String brand, String model, int numberOfWheels) {
+          this.brand = brand;
+          this.model = model;
+          this.numberOfWheels = numberOfWheels;
+      }
+  }
+#+end_src
+
+#+begin_src java Autobus.java
+  public class Autobus extends Vehiculo {
+      int numberOfPassengers;
+      public Autobus(String brand, String model, int numberOfWheels, int numberOfPassenger) {
+          super(brand, model, numberOfWheels);
+          this.numberOfPassenger = numberOfPassenger;
+      }
+  }
+#+end_src
+
+Como buena practica es bueno pedir primero los argumentos de la superclase y luego los argumentos de la clase.
+
+En el ejemplo inferior podemos ver como nos puede ayudar las etiquetas del IDE para poder localizar los argumentos.
+
+#+begin_src java
+  public static void main(String[] args) {
+      // Sin IDE
+      Autobus bus = new Autobus("Seat", "Ibiza", 4, 5);
+  }
+#+end_src
+
+#+begin_src java
+  public static void main(String[] args) {
+      // Con IDE
+      Autobus bus = new Autobus(brand: "Seat", model: "Ibiza", numberOfWheels: 4, numberOfPassengers: 5);
+  }
+#+end_src
+
+Lo primero que hace el constructor de una subclase es invocar al constructor de su padre. SI esto no lo programamos explícitamente, por omisión, invocará al constructor nulo.
+
+Si en una clase base tenemos declarado un constructor que reciba euna determinada combinación de par
+
+La palabra super se utiliza como referencia al constructo del padre.
+
+En Java no existe la herencia múltiple, por lo tanto todas las clases tienen un único padre. Claro que este podría tener varios constructores. Dependiendo de los argumentos que le pasemos a super (cantidad y tipos de datos), el constructor que se invocará será el que concuerde exactamente con dicha combinación. Así mismo, la palabra super también puede utilizarse como un objeto; en tal caso funciona como una referncia directa al padre o clase base.
+
+** Sobreescritura
+Una subclase puede personalizar los métodos que hereda de su superclase. Para hacer esto, la subclase sobreescribe (redefine) el métodod de la superclase con una implementación apropiada.
+
+Para poder sobreescribir un método de nuestra clase padre hace falta escribir la anotación @Override en la parte superior de la definición de nuestro método.
+
+AL escribir dicha anotación el compilador buscará un método en la clase padre llamado igual al que definimos para que el comportamiento de dicho método sea específico con nuestra sobre escritura en los objetos creador con la clase base, si no se encuentra un método llamado igual en nuestrea clase padre el compilador marcará un error.
+
+#+begin_src java
+    public class Vehiculo {
+      String brand;
+      String model;
+      protected int numberOfWheels;
+      public Vehiculo(String brand, String model, int numberOfWheels) {
+          this.brand = brand;
+          this.model = model;
+          this.numberOfWheels = numberOfWheels;
+      }
+      public String getBrand(){
+          return this.brand;
+      }
+  }
+#+end_src
+
+#+begin_src java
+  public class Autobus extends Vehiculo {
+      int numberOfPassengers;
+      public Autobus(String brand, String model, int numberOfWheels, int numberOfPassenger) {
+          super(brand, model, numberOfWheels);
+          this.numberOfPassenger = numberOfPassenger;
+      }
+      @Override
+      public String getbrand() {
+          return "Brand: " + this.brand;
+      }
+  }
+#+end_src
