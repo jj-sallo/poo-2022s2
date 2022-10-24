@@ -1,0 +1,77 @@
+#+LANGUAGE: es
+#+TITLE: Clase del miercoles 
+
+* Polimorfismo
+El polimorfismo significa "muchas formas", y ocurre cuando tenemos muchas class que están relacionadas entre sí por herencias.
+
+#+BEGIN_SRC java
+  class Animal {
+      public void animalSound() {
+	  System.out.println("The pig says: wee wee");
+      }
+  }
+
+  class Dog extends Animal {
+      public void animalSound() {
+	  System.out.println("The dog says: bow wow");
+      }
+  }
+#+END_SRC
+
+El polimorfismo nos permite "programas en forma general", en vez de "programar en forma específica". En particular, nos permite escribor programas que procesen objetos que compartan la misma superclase indirecta como si todos fueran objetos de la superclase; esto puede simplificar la programación.
+
+Las clases Pez, Rana y Ave representan los tipos de animales que se están investigando. Imagine que cada una de estas clases extiende a la superclase Animal, la cual contiene un método
+
+** Clases y métodos abstractos
+Cuando pensamos en un tipo de clase, asumimos que los programas crearán objetos de ese tipo. En algunos casos es conveniente declarar clases (conocidas como clases abstractas) para las cuales el programador nunca creará instancias de objetos. Puesto que sólo se utiliza como superclase en jarquías de herencia, nos referimos a ellas como superclase abstractas.
+Estas clases no pueden utilizarse para instanciar objetos ya que, como veremos pronto, las clases abstractas están imcompletas. Las subclases deben declarar las piezas "faltantes" para convertirse en clases "concretas", a partir de las cuales podemos instanciar objetos. De lo contrario, estas subclases serán abstractas.
+
+En pocas palabras, las clases abstract jamás podrán crear un objeto, sin embargo, es posible heredar de ellas.
+
+No todas las jerarquías contienen clases abstractas. Sin embargo, a menudo los programadores escriben código cliente que utiliza sólo tipos de superclases abstractas para reducir las dependencias del código cliente en un rango de tipos de subclase. Por ejemplo, un programador puede escribir un método con un parámetro de un tippo de superclase abstracta. Cuando es llamado, ese método puede recibir un objeto de cualquier clase concreta que extienda en forma directa o indirecta a la superclase especificada como tipo de parámetros.
+
+Para hacer una clase abstractra, ésta se declara con la palabra clave abstract. Por lo general, esta clase contiene uno o más métodos abstractos. Un método abstracto es un método de instancia con la palabra clave abstract en su declaración, como en:
+
+#+begin_src java
+  public abstract class Vehiculo {
+      String brand;
+      String model;
+      protected int numberOfWheels;
+      public Vehiculo(String brand, String model, int numberOfWheels) {
+	  this.brand = brand;
+	  this.model = model;
+	  this.numberOfWheels = numberOfWheels;
+      }
+      public abstract String getBrand();
+  }
+#+end_src
+
+Una clase abstract debe tener al menos un método abstract.
+
+La clase abstract necesita un constructor para llamarla en la primera linea del constructor de la clase que la hereda.
+
+#+begin_src java
+  public class Autobus extends Vehiculo {
+      int numberOfPassengers;
+      public Autobus(String brand, String model, int numberOfWheels, int numberOfPassengers) {
+	  super(brand. model, numberOfWheels);
+	  this.numberOfPassengers = numberOfPassengers;
+      }
+      @Override
+      public String getBrand() {
+	  return brand;
+      }
+  }
+#+end_src
+
+Los métodos abstractos no proporcionan implementaciones. Una clase que contiene uno o más métodos abstractos debe declararse de manera explícita como abstract, aún si esa clase contiene métodos concretos (no abstractos). Cada subclase concreta de una superclase abstracta también debe proporcionar implementaciones concretas de cada uno de los métodos abstractos de la superclase. Los constructores no se heredan, por lo que nunca podría implementarse un constructor abstract. Aunque los métodos static que no son private se heredan, no pueden sobreescribirse. COmo el propósito de los métodos abstract es sobreescribirlos para procesar objetos con base en sus tipos, no tendría sentido declarar un método static como abstract.
+
+Una clase abstracta declara los atributos y comportamientos comunes (tanto abstractos como concretos) de las diversas clases en una jerarquía de clases. Por lo general, una clase abstracta contiene uno o más métodos abstractos.
+
+El propósito de una clase abstracta es proporcionar una superclase
+
+Tratar de instanciar un objeto de una clase abstract es un error de compilación.
+
+Si no se implementan los métodos abtractos de una superclase en una subclase, se propduce un error de compilación, a menos que la subclase tambień se declare como abstract.
+
+

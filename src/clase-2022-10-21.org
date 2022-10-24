@@ -1,0 +1,5 @@
+#+LANGUAGE: es
+#+TITLE: Clase del viernes 21 de octubre del 2022
+
+* Encapsulamiento
+Introducción a la arquitectura de software oscar valdés 

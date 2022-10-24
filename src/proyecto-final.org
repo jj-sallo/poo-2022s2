@@ -1,0 +1,13 @@
+* Proyecto Final
+Hacer una API Restful usando Springboot, conectada a una base de datos relacional usando SQL (MySQL).
+
+Investigar:
+- API Restful
+- Springboot
+- SQL & MySQL
+- WebService
+- JSON
+
+Ideas para la API:
+- PokeAPI
+- Harry Potter API

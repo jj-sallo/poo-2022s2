@@ -1,0 +1,69 @@
+
+
+* Interfaces
+
+Una interfaz en java es un conjunto de requerimientos que se imponen sobre la clase hija.
+
+Dentro de cada una de las interfaces de Java puedes encontrar constantes estáticas y métodos abstractos. Esto quiere decir que si revisas el código de la interfaz sólo verás los nombres de los métodos.
+
+Es importante saber que cada una de las clases que implementan a la interfaz deben incluir todos los métodos abstractos que han sido enunciado en ella.
+
+Posiblemente pensarás que esto es igual, y de hecho muy similar a las clases abstractas. Sin embargo, en Java no existe la herencia múltiple. Esto quiere decir que una clase sólo puede herdar de una superclase, no de varias. Por esta razón entra en escena el concepto de interfaces.
+
+Entonces una clase podrá heredar métodos de varias interfaces en Java y con este mecanismo, el lenguaje logra ofrecer una mayor abstracción a los programadores que lo utilizan.
+
+De acuerdo con la Especificación del Lenguaje Java, es un estilo apropiado declarar los métodos abstract de una intercaz sin las palabras clave public y abstract, ya que son redundantes en las declaraciones de los métodos de la interfaz. De manera similar, las constantes de una interfaz deben declararse sin las palabras clave public, static y final, ya que también son redundantes.
+
+Para utilizar una interfaz, una clase concreta debe especificar que implementa a esa interfaz y debe declarar cada uno de sus métodos con la firma especificada en la declaración de la interfaz. Para especificar que una clase implementa a una interfaz, agregamos la palabra clave _implements_ y el nombre de la interfaz al final de la primera línea de la declaración de nuestra clase. Una clase que no implementa a todos los métodos de la interfaz es un aclase abstracta, y debe declararse como abstract. Implementar una interaz es como firmar un contrato con el compilador que diga /"Declararé todos los métodos especificados por la interfaz o declararé mi clase como abstracta"/.
+
+#+begin_src java
+  public interface Interfaz {
+      String nombreConstanteEstatica = "name";
+      void nombreDelMetodoAbstracto();
+  }
+#+end_src
+
+#+begin_src java
+  public class Vehiculo implements Interfaz {
+      @Override
+      public void nombreDelMetodoAbstracto() {
+      }
+  }
+#+end_src
+
+A menudo, una interfaz se utiliza en vez de una clase abstract cuando no hay una implementación predeterminada que heredar (antes de Java 8); esto es, no hay campos ni implementaciones de métodos predeterminados. Las interfaces tienen que ser declaradas en su propio archivo.
+
+Diferencias entre clases e interfaces
+
++-------------------------------------------------+------------------------------------------------------------------------------------+
+| Clases                                          | Interfaces                                                                         |
++-------------------------------------------------+------------------------------------------------------------------------------------+
+| Una clase solo puede heredar de otra clase      | Una clase puede heredar de varias interfaces                                       |
++-------------------------------------------------+------------------------------------------------------------------------------------+
+| En una clase puedes generar variables y objetos | Una interfaz sólo puede contener constantes estáticas y metodos abstractos         |
++-------------------------------------------------+------------------------------------------------------------------------------------+
+| Dentro de una clase puedes implementar métodos  | Las interfaces tiene métodos abstractos que osn implementados por las demás clases (Antes de java 8)|
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+
+Use una clase abstracta cuando se necesita definir una plantilla para un grupo de subclases.
+
+Use una interfaz cuando se debe definir un rol para otras clases, independientemente del árbol de herencia de estas clases.
+
+Mejoras en interfaces de JAVA SE8
+Antes de Java SE 8, los métodos de las interfaces sólamente podían ser métodos abstract. En java SE 8, las interfaces también pueden contener métodos default public con implementaciones predeterminadas concretas que especifiquen cómo deben realizarse las operaciones cuando una clase implementadora no sobreescriba los métodos. Si una clase implementa dicha interfaz. la clase también recible las implementaciones default de esa interfaz (si las hay). Para declarar un método default, coloque la palabra clave default antes del tipo de valor de retorno del método y proporcione una implementación concreta del mismo.
+
+#+begin_src java
+  public interface Interfaz {
+      String nombreConstanteEstatica = "name";
+      void nombreDelMetodoAbstracto();
+      default void nombreDelMetodoDefault() {
+          System.out.println("Metodo default");
+      }
+  }
+#+end_src
+
+Antes de Java SE 8, agregar métodos a una interfaz descompondría a las clases implementadoras que no implementarán nuevos métodos. Recuerde que, si no implementó cada uno de los métodos de la interfaz, tiene que declarar su clase como abstract.
+
+Los métodos default de Java 8 le permiten evolucionar las interfaces existentes al agregar nuevos métodos a esas interfaces sin descomponer el código que las usa.
+
+Con Java SE 8, ahora tenemos métodos default y métodos estáticos dentro de las interfaces, junto con los métodos abstractos ya existentes.

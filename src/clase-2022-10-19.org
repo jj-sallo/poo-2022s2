@@ -1,0 +1,25 @@
+#+LANGUAGE: es
+#+TITLE: Clase del miércoles 19 de octubre del 2022
+
+* Abstracción
+La abstracción la podemos definir como el proceso de identificar aquellas características (atribuots) y acciones o comportamientos (métodos) propios de un elemento que deseemos representar.
+
+La abstracción es simplemente un acto mental en el que se aísla conceptualmente una propiedad o ofunción concreta de un objeto, básicamente es aislar los elementos de su entorno.
+
+La abstracción es la habilidad de ignorar los detalles de las partes para enfocar la atención en un nivel más alto del problema.
+
+* Encapsulamiento
+El encapsulamiento sucede cuando algo es envuelto en una capa protectora. Cuando el encapsulamiento se aplica a los objtos, significa que los datos del objeto están protegidos, "ocultos" dentro del objeto. Con los datos ocultos, ¿Cómo puede el resto del programa acceder a ellos? (El acceso a los datos de un objeto se refiere a leerlos o modificarlos). El resto del programa no puede acceder de manera directa a los datos de un objeto; lo que tiene que hacer con ayuda de los métodos del objeto.
+
+En el supesto de que los métodos de un objeto estén bien escritos, los métodos aseguran que se pueda acceder a los datos de manera adecuada. Al hecho de empaquetas o proteger los datos o atributos con los métodos se denomina encapsulamiento.
+
+Los métodos get/set o el incorporar el comportamiento de una clase dentro de otra son prácticas de encapsulamiento.
+
+Patriones de diseño
+MVC   (malo)
+MVP   (malo)
+MNI   (malo)
+MVVM  (Ok)    <- Android
+VIPER (Bueno) <- iOS
+
+View, Interface, Presenter, Entity, Response

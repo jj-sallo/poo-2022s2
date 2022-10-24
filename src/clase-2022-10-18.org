@@ -1,0 +1,20 @@
+* Eliminar un nodo de un arbol de búsqueda binario
+- Que el nodo no tenga hijos, es una hoja: sencillamente eliminamos el nodo y ponemos a null la referencia que tenía el padre apuntando a dicho nodo.
+- QUe tenga 1 hijo: Haremos que el nodo padre del nood a eliminar apunte al único hijo que tiene el nodo a eliminar y luego eliminamos el nodo
+- Que tenga 2 hijos: Al eliminar, tenemos dos opciones
+  + Seleccionar del subarbol izquierdo el nodo que ocupara el sitio del nodo eliminado. Buscaríamos el nodo de mayor valor de todo el subárbol izquierdo, que debe ser el que se encuentre más a ala derecha.
+  + Seleccionar del subárbol derecho el nodo que ocupará el sitio del nodo eliminado. Buscaríamos el nodo de menor valor de todo el subárbol derecho, que debe ser el que se encuentre más a la izquierda.
+
+             __[18]__
+            /        \
+        [ 09]          [25]
+       /    \        /    \
+   [7]       [12]  [23]  [29]
+  /   \     /      /   \     \
+[2]   [8]  [11]  [21]  [24]  [31]
+
+Existen cuatro tipos de arboles binarios
+- Distintos: Sus estructuras son diferentes
+- Similares: Sus estructuras son idénticas pero su información es distinta
+- Equivalentes: Cuando sus estructuras son idénticas y sus información es igual
+- Completos: Todos los nodos que no sean hojas tienen exactamente dos hijos
